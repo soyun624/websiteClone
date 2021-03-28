@@ -25,8 +25,16 @@
       height: 30px;
       object-fit: contain;
       display: block;
+      margin-right: 10px;
    }
 
+   span{
+      display: flex;
+      align-items: center;
+      font-weight: bold !important;
+      color: white !important;
+      font-size: 22px;
+   }
    form {
       flex: 0.6;
       display: flex;

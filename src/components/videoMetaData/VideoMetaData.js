@@ -32,6 +32,39 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
       dispatch(checkSubscriptionStatus(channelId))
    }, [dispatch, channelId])
 
+
+   const likePost = (id)=>{
+      fetch('/like',{
+         method:"put",
+         headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer "+localStorage.getItem("jwt")
+         },
+         body:JSON.stringify({
+            postId:id
+         })
+      }).then(res=>res.json())
+      .then(result=>{
+         console.log(result)
+      })
+   }
+ 
+   const unlikePost = (id)=>{
+      fetch('/like',{
+         method:"put",
+         headers:{
+            "Content-Type":"application/json",
+            "Authorization":"Bearer "+localStorage.getItem("jwt")
+         },
+         body:JSON.stringify({
+            postId:id
+         })
+      }).then(res=>res.json())
+      .then(result=>{
+         console.log(result)
+      })
+   }
+  
    return (
       <div className='py-2 videoMetaData'>
          <HelmetCustom title={title} description={description} />
@@ -46,10 +79,10 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
 
                <div>
                   <span className='mr-3'>
-                     <MdThumbUp size={26} /> {numeral(likeCount).format('0.a')}
+                     <MdThumbUp size={26} onClick={()=>likePost(channelId)}/> {numeral(likeCount).format('0.a')}
                   </span>
                   <span className='mr-3'>
-                     <MdThumbDown size={26} />{' '}
+                     <MdThumbDown size={26} onClick={()=>unlikePost(channelId)}/>{' '}
                      {numeral(dislikeCount).format('0.a')}
                   </span>
                </div>

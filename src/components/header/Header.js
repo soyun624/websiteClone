@@ -23,11 +23,14 @@ const Header = ({ handleToggleSidebar }) => {
         <div className="header">
             
             <FaBars className="header__menu" size={26} onClick={() => handleToggleSidebar()}/>
-            <img
-            src='http://pngimg.com/uploads/youtube/youtube_PNG2.png'
-            alt=''
-            className='header__logo'
-            />
+            <span>
+               <img
+               src='http://pngimg.com/uploads/youtube/youtube_PNG2.png'
+               alt=''
+               className='header__logo'
+               />
+               YouTube Clone
+            </span>
 
         <form onSubmit={handleSubmit}>
             <input
