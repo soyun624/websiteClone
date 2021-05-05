@@ -51,10 +51,10 @@ const Sidebar = ({ sidebar, handleToggleSidebar }) => {
             <MdLibraryBooks size={23} />
             <span>Library</span>
          </li>
-         {/* <li>
+         <li>
             <MdSentimentDissatisfied size={23} />
             <span>I don't Know</span>
-         </li> */}
+         </li>
 
          <hr />
 
